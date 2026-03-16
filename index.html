@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Виртуальные помощники в учебе | Рекомендации 2026</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #fdfaff;
+            color: #3e3857;
+            line-height: 1.6;
+        }
+
+        /* Пастельная палитра */
+        :root {
+            --pastel-lavender: #f0e6ff;
+            --pastel-mint: #dcf2ea;
+            --pastel-peach: #ffe4d9;
+            --pastel-sky: #e1f0fd;
+            --pastel-rose: #ffe6f0;
+            --white-soft: #ffffff;
+            --shadow-soft: 0 25px 40px -20px rgba(128, 110, 170, 0.2);
+            --border-radius-large: 48px;
+            --border-radius-medium: 28px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка сайта */
+        .header {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 15px;
+            z-index: 100;
+            margin: 15px 15px 30px 15px;
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 650;
+            font-size: 1.1rem;
+            color: #52467b;
+        }
+
+        .logo i {
+            font-size: 1.6rem;
+            color: #8d7ac0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-weight: 500;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4c426e;
+            transition: 0.2s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #b8a7f0;
+        }
+
+        .year-badge {
+            background: #ece2ff;
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-weight: 600;
+            color: #5a4890;
+            border: 1px solid white;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        /* Герой */
+        .hero {
+            margin: 15px 15px 40px 15px;
+            background: linear-gradient(135deg, #f3ebff, #ffeaf2);
+            border-radius: 40px;
+            padding: 40px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            box-shadow: var(--shadow-soft);
+            gap: 30px;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2rem, 8vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            background: linear-gradient(165deg, #3b2e58, #6e5b9c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            color: #564d7a;
+            margin-bottom: 25px;
+        }
+
+        .hero-image {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 25px 40px;
+            font-size: clamp(4rem, 15vw, 6rem);
+            color: #9f8bd0;
+            border: 3px dashed white;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        /* Секции */
+        .section {
+            margin: 60px 15px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
+            font-weight: 650;
+            margin-bottom: 30px;
+            color: #3d3158;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .section-title span {
+            background: var(--pastel-lavender);
+            padding: 8px 18px;
+            border-radius: 60px;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+        }
+
+        /* Сетка карточек */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-medium);
+            padding: 30px 25px;
+            border: 1px solid white;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.2s;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: white;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            background: rgba(226, 213, 255, 0.8);
+            width: 70px;
+            height: 70px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #624f96;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            font-weight: 650;
+            margin-bottom: 15px;
+            color: #362e4f;
+        }
+
+        .card p {
+            color: #4f4572;
+            font-size: 1rem;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .card li {
+            margin-bottom: 12px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 1rem;
+        }
+
+        .card li i {
+            color: #7b66b0;
+            width: 22px;
+            font-size: 1.1rem;
+        }
+
+        /* Сетка помощников */
+        .assistants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .assistant-card {
+            background: white;
+            border-radius: 24px;
+            padding: 25px 22px;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 15px 30px -12px rgba(135, 115, 175, 0.15);
+            transition: 0.2s;
+            height: 100%;
+        }
+
+        .assistant-card:hover {
+            background: #fbfaff;
+            border-color: #daceff;
+        }
+
+        .assistant-icon {
+            background: var(--pastel-sky);
+            width: 60px;
+            height: 60px;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #5e4c89;
+            margin-bottom: 18px;
+        }
+
+        .assistant-name {
+            font-size: 1.5rem;
+            font-weight: 650;
+            margin-bottom: 10px;
+            color: #2b243f;
+        }
+
+        .assistant-desc {
+            color: #524a75;
+            margin: 10px 0 16px;
+            font-size: 0.95rem;
+        }
+
+        .assistant-tag {
+            background: var(--pastel-mint);
+            padding: 5px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #165c47;
+            display: inline-block;
+        }
+
+        /* Инструкция */
+        .instruction-section {
+            background: rgba(245, 240, 255, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 40px;
+            padding: 40px 30px;
+            border: 1px solid white;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0 25px;
+        }
+
+        .step-item {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(6px);
+            border-radius: 35px;
+            padding: 30px 25px;
+            border: 1px solid white;
+            height: 100%;
+        }
+
+        .step-number {
+            background: #b9a7e3;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .step-item h4 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #332c4b;
+        }
+
+        .step-item p {
+            font-size: 0.95rem;
+        }
+
+        .tip-box {
+            background: #fff0ea;
+            border-radius: 60px;
+            padding: 18px 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            border: 2px solid white;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tip-box i {
+            font-size: 2rem !important;
+        }
+
+        /* Футер */
+        .footer {
+            margin: 60px 15px 20px 15px;
+            background: #e8defa;
+            border-radius: 40px;
+            padding: 35px 30px 25px;
+            color: #3d3560;
+            border: 2px solid white;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ===== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ ===== */
+        /* Планшеты */
+        @media (max-width: 900px) {
+            .card-grid, .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .header-inner {
+                justify-content: center;
+            }
+            
+            .hero {
+                text-align: center;
+                justify-content: center;
+            }
+            
+            .hero-text h1 br {
+                display: none;
+            }
+        }
+
+        /* Телефоны */
+        @media (max-width: 600px) {
+            .card-grid, .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .assistants-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 25px 15px;
+                margin: 10px;
+            }
+            
+            .hero-image {
+                padding: 15px 25px;
+            }
+            
+            .section-title {
+                justify-content: center;
+                text-align: center;
+                font-size: 1.8rem;
+            }
+            
+            .section-title span {
+                font-size: 1.3rem;
+            }
+            
+            .nav-links {
+                gap: 12px;
+            }
+            
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+            
+            .header {
+                margin: 8px;
+                border-radius: 40px;
+            }
+            
+            .header-inner {
+                flex-direction: column;
+                padding: 12px;
+            }
+            
+            .logo {
+                margin-bottom: 5px;
+            }
+            
+            .step-item {
+                padding: 20px 18px;
+            }
+            
+            .step-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
+            }
+            
+            .step-item h4 {
+                font-size: 1.2rem;
+            }
+            
+            .tip-box {
+                padding: 15px 18px;
+                font-size: 0.9rem;
+                border-radius: 40px;
+            }
+            
+            .card {
+                padding: 25px 20px;
+            }
+            
+            .card h3 {
+                font-size: 1.4rem;
+            }
+            
+            .assistant-card {
+                padding: 20px 18px;
+            }
+            
+            .assistant-name {
+                font-size: 1.3rem;
+            }
+            
+            .footer {
+                margin: 40px 10px 15px;
+                padding: 25px 20px 20px;
+                border-radius: 30px;
+            }
+        }
+
+        /* Очень маленькие телефоны */
+        @media (max-width: 380px) {
+            .nav-links {
+                gap: 8px;
+            }
+            
+            .nav-links a {
+                font-size: 0.7rem;
+            }
+            
+            .year-badge {
+                padding: 4px 10px;
+                font-size: 0.7rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .section-title span {
+                font-size: 1.1rem;
+                padding: 5px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                
+                <span>virtual assistants</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about">о помощниках</a>
+                <a href="#functions">функции</a>
+                <a href="#benefits">польза</a>
+                <a href="#guide">инструкция</a>
+            </div>
+            <div class="year-badge">
+                <i class="fa-regular fa-calendar"></i> 2026
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Виртуальные помощники<br>в учебном процессе</h1>
+            <p>Рекомендации по использованию современных ИИ-ассистентов для учёбы</p>
+        </div>
+        <div class="hero-image">
+            <i class="fa-regular fa-message"></i>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- Определение -->
+        <section id="about" class="section">
+            <div class="section-title">
+                <span>📌</span> Что такое виртуальный помощник?
+            </div>
+            <div class="card-grid">
+                <div class="card" style="grid-column: span 3;">
+                    <div class="card-icon"><i class="fa-regular fa-question"></i></div>
+                    <h3>Определение</h3>
+                    <p><strong>Виртуальный помощник</strong> — это программа на основе искусственного интеллекта, которая понимает голосовые или текстовые команды и помогает пользователю выполнять различные задачи: искать информацию, отвечать на вопросы, составлять планы, переводить тексты, создавать конспекты и многое другое.</p>
+                    <p style="margin-top: 20px;">Современные помощники используют технологии обработки естественного языка (NLP) и машинного обучения, что позволяет им адаптироваться под индивидуальные потребности ученика.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Основные функции -->
+        <section id="functions" class="section">
+            <div class="section-title">
+                <span>⚙️</span> Основные функции помощника
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="assistant-icon"><i class="fa-regular fa-waveform"></i></div>
+                    <h3>Поиск</h3>
+                    <p>Мгновенный поиск информации по любым учебным темам, формулировкам, терминам.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-regular fa-pen-to-square"></i></div>
+                    <h3>Конспекты</h3>
+                    <p>Создание кратких конспектов, саммари статей и параграфов.</p>
+                </div>
+                <div class="card">
+                    <div class="assistant-icon"><i class="fa-regular fa-waveform"></i></div>
+                    <h3>Перевод</h3>
+                    <p>Перевод текстов на разные языки, объяснение иностранных слов.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-regular fa-clock"></i></div>
+                    <h3>Планирование</h3>
+                    <p>Составление расписания, напоминания о дедлайнах.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-regular fa-lightbulb"></i></div>
+                    <h3>Объяснение</h3>
+                    <p>Простые объяснения сложных понятий, примеры, аналогии.</p>
+                </div>
+                <div class="card">
+                     <div class="assistant-icon"><i class="fa-regular fa-waveform"></i></div>
+                   <h3>Помощь с кодом</h3>
+                    <p>Написание и объяснение кода, решение задач по программированию.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Польза для ученика -->
+        <section id="benefits" class="section">
+            <div class="section-title">
+                <span>✨</span> Польза для ученика
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                   <div class="assistant-icon"><i class="fa-regular fa-waveform"></i></div>
+                    <h3>Экономия времени</h3>
+                    <p>Быстрый доступ к нужной информации без долгого поиска в учебниках.</p>
+                </div>
+                <div class="card">
+                    <div class="assistant-icon"><i class="fa-regular fa-waveform"></i></div>
+                    <h3>Понимание сложного</h3>
+                    <p>Помощь в освоении трудных тем через простые объяснения.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-regular fa-clock"></i></div>
+                    <h3>Доступ 24/7</h3>
+                    <p>Помощник доступен в любое время, не нужно ждать учителя.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-regular fa-face-smile"></i></div>
+                    <h3>Нет страха ошибок</h3>
+                    <p>Можно задавать любые вопросы без стеснения.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-regular fa-note-sticky"></i></div>
+                    <h3>Подготовка к экзаменам</h3>
+                    <p>Генерация вопросов для самопроверки, создание шпаргалок.</p>
+                </div>
+                <div class="card">
+                     <div class="assistant-icon"><i class="fa-regular fa-waveform"></i></div>
+                   <h3>Изучение языков</h3>
+                    <p>Перевод, объяснение грамматики, практика диалогов.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Как пользоваться -->
+        <section id="guide" class="section">
+            <div class="section-title">
+                <span>📋</span> Как пользоваться виртуальным помощником
+            </div>
+            <div class="instruction-section">
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h4>Выбери помощника</h4>
+                        <p>Определи, какая задача стоит: голосовое управление (Алиса, Siri) или текстовые запросы (ChatGPT, DeepSeek).</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h4>Сформулируй запрос</h4>
+                        <p>Чем точнее запрос, тем полезнее ответ. Например: «объясни теорему Пифагора с примером».</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h4>Уточняй детали</h4>
+                        <p>Задавай уточняющие вопросы: «приведи ещё пример», «объясни проще».</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h4>Проверяй факты</h4>
+                        <p>Для важной информации сверяйся с учебником или другими источниками.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <h4>Используй творчески</h4>
+                        <p>Проси составить тесты, планы эссе, список вопросов для самопроверки.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">6</div>
+                        <h4>Комбинируй</h4>
+                        <p>Голосовой помощник для быстрых вопросов, текстовый — для глубокого изучения.</p>
+                    </div>
+                </div>
+                <div class="tip-box">
+                    <i class="fa-regular fa-lightbulb" style="font-size: 2.2rem; color: #b28bdd;"></i>
+                    <span>Совет 2026: Попроси ИИ создать тест по пройденной теме — эффективный способ самопроверки.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Популярные помощники -->
+        <section class="section">
+            <div class="section-title">
+                <span>🤖</span> Популярные помощники
+            </div>
+            <div class="assistants-grid">
+                <div class="assistant-card">
+                    <div class="assistant-icon"><i class="fa-regular fa-waveform"></i></div>
+                    <div class="assistant-name">Алиса</div>
+                    <div class="assistant-desc">Яндекс. Голосовой помощник с пониманием контекста, генерацией текстов и изображений.</div>
+                    <span class="assistant-tag">голос / текст</span>
+                </div>
+                <div class="assistant-card">
+                    <div class="assistant-icon"><i class="fa-brands fa-apple"></i></div>
+                    <div class="assistant-name">Siri</div>
+                    <div class="assistant-desc">Apple. Встроена в iPhone, iPad, Mac. Напоминания, быстрый поиск.</div>
+                    <span class="assistant-tag">голос</span>
+                </div>
+                <div class="assistant-card">
+                    <div class="assistant-icon"><i class="fa-regular fa-heart"></i></div>
+                    <div class="assistant-name">Маруся</div>
+                    <div class="assistant-desc">VK. Помощник с функциями музыки, ответов на вопросы, лекций.</div>
+                    <span class="assistant-tag">голос</span>
+                </div>
+                <div class="assistant-card">
+                    <div class="assistant-icon"><i class="fa-regular fa-comment"></i></div>
+                    <div class="assistant-name">ChatGPT</div>
+                    <div class="assistant-desc">OpenAI. Универсальный текстовый ИИ для эссе, задач, кода.</div>
+                    <span class="assistant-tag">текст</span>
+                </div>
+                <div class="assistant-card">
+                    <div class="assistant-icon"><i class="fa-regular fa-waveform"></i></div>
+                    <div class="assistant-name">DeepSeek</div>
+                    <div class="assistant-desc">Анализ данных, глубокое понимание контекста, исследования.</div>
+                    <span class="assistant-tag">аналитика</span>
+                </div>
+                <div class="assistant-card">
+                    <div class="assistant-icon"><i class="fa-brands fa-google"></i></div>
+                    <div class="assistant-name">Google Assistant</div>
+                    <div class="assistant-desc">Поиск, перевод, планирование, умный дом.</div>
+                    <span class="assistant-tag">мульти</span>
+                </div>
+                <div class="assistant-card">
+                    <div class="assistant-icon"><i class="fa-brands fa-windows"></i></div>
+                    <div class="assistant-name">Cortana</div>
+                    <div class="assistant-desc">Microsoft. Задачи, встречи, интеграция с Office.</div>
+                    <span class="assistant-tag">продуктивность</span>
+                </div>
+                <div class="assistant-card">
+                    <div class="assistant-icon"><i class="fa-regular fa-waveform"></i></div>
+                    <div class="assistant-name">Яндекс Нейро</div>
+                    <div class="assistant-desc">Генерация текстов, идей, конспектов на русском языке.</div>
+                    <span class="assistant-tag">нейросеть</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+            <div style="font-weight: 600; font-size: 1.2rem;">
+                Виртуальные помощники в учебе
+            </div>
+            <div style="display: flex; gap: 30px;">
+                <i class="fa-regular fa-envelope"></i>
+                <i class="fa-regular fa-circle-question"></i>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            © 2026 Рекомендации по использованию виртуальных помощников. Все права защищены.
+        </div>
+    </footer>
+
+</body>
+</html>
